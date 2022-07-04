@@ -1,0 +1,20 @@
+<app-header></app-header>
+<hello name="{{ name }}"></hello>
+<p>Start editing to see some magic happen :)</p>
+<div *ngIf="userdata.length > 0; then user; else nouser"></div>
+
+<ul>
+  <li *ngFor="let pj of project">{{ pj }}</li>
+</ul>
+myCity:<input class="form-control" type="text" [(ngModel)]="myCity" />
+{{ myCity }}
+<ng-template #user>
+  <ul>
+    <li *ngFor="let ud of userdata">{{ ud }}</li>
+  </ul></ng-template
+>
+<ng-template #nouser>No User Found</ng-template>
+<img [src]="imgSrc" />
+<button class="btn btn-primary" (click)="addUser()">add</button>
+<app-favorite [isFavourite]="isSelected"></app-favorite>
+<app-footer></app-footer>
